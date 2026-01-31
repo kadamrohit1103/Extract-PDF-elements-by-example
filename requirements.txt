@@ -1,0 +1,18 @@
+# YOLOv8 Detail Box Extractor
+# Requirements for training and extraction
+
+# Core ML framework
+ultralytics>=8.0.0
+
+# PDF processing
+PyMuPDF>=1.23.0
+
+# Image handling
+Pillow>=9.0.0
+
+# Labeling tool
+labelImg>=1.8.0
+
+# Optional: GPU acceleration (uncomment for NVIDIA GPU)
+# torch>=2.0.0
+# torchvision>=0.15.0

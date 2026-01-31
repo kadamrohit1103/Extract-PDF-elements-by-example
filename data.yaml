@@ -1,0 +1,14 @@
+# YOLOv8 Dataset Configuration
+# Path to dataset root directory
+path: C:/Users/kadam/Documents/datasets
+
+# Paths relative to 'path' above
+train: train/images
+val: val/images
+
+# Number of classes
+nc: 1
+
+# Class names
+names:
+  0: detail_box
