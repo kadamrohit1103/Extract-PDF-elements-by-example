@@ -1,0 +1,14 @@
+# Component Classification Labels
+# Format: image_filename,component1,component2,component3,...
+# 
+# Example:
+# page001_detail01_conf0.85.png,Base Plate,Guide/Hold-on,Trunnion
+# page002_detail01_conf0.90.png,Pipe Shoe,Wear Pad,Line Stopper
+#
+# Rules:
+# - First column is the image filename (just the name, not full path)
+# - Remaining columns are component names (must match components.txt exactly)
+# - Use commas to separate multiple components
+# - Leave blank lines or lines starting with # as comments
+#
+# Start labeling below this line:

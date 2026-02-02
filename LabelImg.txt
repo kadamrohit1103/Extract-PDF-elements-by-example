@@ -1,0 +1,6 @@
+Put labelImg.py in "C:\Users\XYZ\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\labelImg\labelImg.py"
+
+Put shape.py in "C:\Users\XYZ\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\libs\shape.py"
+
+Put canvas.py in "C:\Users\kadam\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\libs\canvas.py"
+

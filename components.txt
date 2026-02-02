@@ -1,0 +1,43 @@
+# Component Classification - Component List
+# Edit this file to add/remove component names
+# One component per line
+# Lines starting with # are comments
+
+# Main Types (for reference)
+Trunnion
+Penetration
+Pipe Shoe
+
+# Structural Components
+Base Plate
+Cap Plate
+Elbow Pad
+Wear Pad
+Full Ring Wear Pad
+
+# Restraints & Guides
+Guide/Hold-on
+Line Stopper
+U-bolt/Clamp
+
+# Mounting Types
+Rested on Deck
+Welded
+
+# Sleeve Types
+Offset Sleeve
+Symmetric Sleeve
+
+# Pipe Fittings
+Flange
+Straight Pipe
+45 Elbow
+90 Elbow
+
+# Location/Orientation (optional - include if useful)
+Horizontal
+Vertical
+Deck
+Bulkhead
+Watertight
+Non-watertight
