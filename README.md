@@ -125,3 +125,83 @@ Reduce `batch_size` in `2_train_model.py` (try 4 or 2).
 2. **Be consistent**: Label ALL detail boxes in each training image
 3. **Validation set**: Copy 1-2 labeled images to `val/` for better training
 4. **GPU acceleration**: For faster training, install PyTorch with CUDA support
+
+---
+
+## 🔬 Component Classifier (Phase 2)
+
+After extracting detail images, you can train a classifier to identify which components are in each image.
+
+### Files
+
+| File | Purpose |
+|------|---------|
+| `components.txt` | List of component names (edit as needed) |
+| `labels.csv` | Your training labels |
+| `4_train_classifier.py` | Train the classifier |
+| `5_classify_components.py` | Run inference → Excel output |
+| `6_verify_predictions.py` | GUI to review/correct predictions |
+
+### Workflow
+
+#### Step 1: Prepare Labels
+
+1. Review `components.txt` - add/remove component names as needed
+2. Open `labels.csv` and add training data:
+   ```
+   image_filename.png,Component1,Component2,Component3
+   ```
+   Example:
+   ```
+   page001_detail01.png,Base Plate,Guide/Hold-on
+   page002_detail01.png,Trunnion,Wear Pad,Cap Plate
+   page003_detail02.png,Pipe Shoe
+   ```
+3. Label **100-150 images** minimum for good accuracy
+
+#### Step 2: Train the Model
+
+```powershell
+python 4_train_classifier.py
+```
+
+- Takes ~10-30 min (CPU) or ~5 min (GPU)
+- Model saves to `classifier_model/component_classifier.pt`
+
+#### Step 3: Classify All Images
+
+```powershell
+python 5_classify_components.py
+```
+
+- Processes all images in `figures/` folder
+- Outputs `component_predictions.xlsx`
+
+#### Step 4: Verify & Improve (Optional)
+
+```powershell
+python 6_verify_predictions.py
+```
+
+- Opens GUI showing each image + prediction
+- Click **Accept** if correct, or check boxes + **Save Corrections**
+- Click **Save All** to add verified labels to `labels.csv`
+- Retrain for better accuracy
+
+### Configuration
+
+Edit the top of each script to change:
+
+| Setting | Default | Description |
+|---------|---------|-------------|
+| `IMAGES_FOLDER` | `figures/` | Where extracted images are |
+| `CONFIDENCE_THRESHOLD` | `0.5` | Min confidence to include component |
+| `EPOCHS` | `30` | Training iterations |
+| `MODEL_NAME` | `efficientnet_b0` | Use `efficientnet_b2` for better accuracy |
+
+### Tips for Better Accuracy
+
+1. **More labels = better accuracy** (aim for 50+ per component type)
+2. **Be consistent** with component names (must match `components.txt` exactly)
+3. **Include variations** - different sizes, orientations, contexts
+4. **Iterate**: Train → Verify → Add corrections → Retrain
